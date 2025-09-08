@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worldwide SE Support Services Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Styles for a more polished look */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .tab-button.active {
+            border-color: #5f259f;
+            color: #5f259f;
+            background-color: #f3e8ff;
+        }
+        .sub-tab-button.active-sub {
+            background-color: #5f259f;
+            color: white;
+        }
+        .accordion-button.active-acc {
+            background-color: #f3e8ff;
+            color: #5f259f;
+        }
+        .accordion-button:hover .accordion-icon {
+            color: #5f259f;
+        }
+        .accordion-button.active-acc .accordion-icon {
+            transform: rotate(180deg);
+        }
+        .panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            padding: 10px; /* Optional padding around the image */
+            background-color: #f7f7f7; /* Light background for visibility */
+            border-radius: 8px;
+            overflow: hidden; /* Ensure image doesn't overflow container */
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px; /* Slightly rounded corners for images */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+        }
+    </style>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <div id="overview" class="content active mt-6">
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h2 class="text-2xl font-bold text-purple-700 mb-4">Welcome to WW SE Support</h2>
+                <p class="mb-4">The WW SE Support team is live globally and we are providing round the clock support. The field SEs can take advantage of the services and can offload the time consuming activities to us which will give you more time in the field with your customers. With a <strong>97% average NPS score</strong>, you can completely rely on us to provide you the accurate and fast response.</p>
+                
+                <div class="mt-6 bg-purple-50 border border-purple-200 rounded-lg p-4">
+                    <h3 class="font-semibold text-lg text-purple-800 mb-3">Quick Links & Contact Info</h3>
+                    <ul class="space-y-2">
+                        <li><strong>Email Us:</strong> <a href="mailto:SE_Support@nutanix.com" class="text-indigo-600 hover:underline">SE_Support@nutanix.com</a></li>
+                        <li><strong>Slack Channel:</strong> <a href="#" class="text-indigo-600 hover:underline">#se_support-ww</a></li>
+                         <li><strong>Video Feedback:</strong> <a href="https://players.brightcove.net/5850956868001/qIxULaBE2_default/index.html?videoId=6376288379112" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">Watch feedback from the field System Engineers!</a></li>
+                    </ul>
+                </div>
+            </div>
+             <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mt-6">
+                <h2 class="text-2xl font-bold text-purple-700 mb-4">SE Support Services List</h2>
+                <ul class="list-disc list-inside space-y-3">
+                    <li><strong>HW BOM Validation:</strong> Perform customer/prospects existing hardware compatibility check on AHV, also recommends component replacement of the existing HW to meet the AHV compatibility.</li>
+                    <li><strong>Architectural Diagram Creation:</strong> Creation of Technical Architectural Diagrams to visualize the Current vs Future Proposed Infrastructure and share with the account SE.</li>
+                    <li><strong>Data Center Info Collection:</strong> Collects customer/prospects existing infra data collection and share with account team to create sizing BOM.</li>
+                    <li><strong>3rd Party App Validation (Soft Launch):</strong> Currently under soft launch, assist SE to validate 3rd party apps compatibility on AHV and initiate app validation prioritization by partnering with the Nutanix Alliances and SE Management.</li>
+                    <li><strong>Customer Success Support (Soft Launch):</strong> Part of a soft launch, SE Support team are going to assist customer success sales team on resolving few pre-identified technical queries raised by the existing customers. SE Support team is involved only when the account SE raises the SE Support case for assistance.</li>
+                    <li><strong>Request Product Enhancement (Soft Launch):</strong> Currently under soft launch, SEs can now submit a SE Support case to propose product new feature enhancements. This will be prioritized based on the associated opportunity ACV value and then shared with the respective PMs to expedite the feature enhancement.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
