@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worldwide SE Support Services Guide</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Worldwide SE Support Services Guide</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
         /* Custom Styles for a more polished look */
         body {
             font-family: 'Inter', sans-serif;
@@ -50,110 +51,127 @@
             border-radius: 6px; /* Slightly rounded corners for images */
             box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
         }
-    </style>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: grab;
+}
+
+.image-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  transition: transform 0.2s ease;
+  cursor: grab;
+}
+</style>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 </head>
 <body class="bg-gray-50 text-gray-800">
-    <div class="container mx-auto pt-0 px-4 sm:px-6 lg:px-8">
-        <div id="ticketing" class="content mt-6">
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                 <h2 class="text-2xl font-bold text-purple-700 mb-4">How to Create a Case for SE Support</h2>
-                 <p class="mb-6">Currently, Worldwide System Engineers have 3 active options to raise a "SE Support" tickets.</p>
-                <div class="sub-nav mb-6 bg-purple-100 rounded-lg p-1 flex space-x-1">
-                    <button class="sub-tab-button flex-1 py-2 px-4 text-center font-semibold rounded-md transition-colors duration-300 active-sub" onclick="openSubTab(event, 'sfdc', 'ticketing-group')">A) SFDC Case Object</button>
-                    <button class="sub-tab-button flex-1 py-2 px-4 text-center font-semibold rounded-md transition-colors duration-300" onclick="openSubTab(event, 'helper', 'ticketing-group')">B) Helper App</button>
-                    <button class="sub-tab-button flex-1 py-2 px-4 text-center font-semibold rounded-md transition-colors duration-300" onclick="openSubTab(event, 'gpt', 'ticketing-group')">C) SE GPT</button>
-                </div>
-
-                <div id="sfdc" class="sub-content active-sub ticketing-group">
-                    <h3 class="font-semibold text-lg text-gray-800 mb-3">Option 1: Using the SFDC Case Object</h3>
-                    <p class="mb-3">Introducing the new SE Support Ticketing system available under the customer/prospect Account object in SFDC. SFDC case creation allows SE to add all the relevant information into the ticket before submitting it to ensure quick turnaround.</p>
-                    <p>Use the following steps to successfully submit a "SE Support" Ticket in SFDC:</p>
-                    <div class="space-y-4 mt-4">
-                        <div>
-                            <p><strong>1. In Salesforce, navigate to a Customer/Prospect/Channel Account.</strong></p>
-                        </div>
-                        <div>
-                            <p><strong>2. Click on 'Cases'.</strong></p>
-                            <div class="image-container">
-                                <img src="./images/page2_img3.png" alt="Case 'Type' drop-down menu">
-                            </div>
-                        </div>
-                        <div>
-                            <p><strong>3. Click on 'New Case' to open the form, and select 'SE Support' as the record type. Click Next to proceed.</strong></p>
-                             <div class="image-container">
-                                <img src="./images/page2_img2.png" alt="'New Case' record type selection">
-                            </div>
-                        </div>
-                        <div>
-                            <p><strong>4. Using the Type drop-down, select the service from the drop-down list.</strong></p>
-                            <div class="image-container">
-                                <img src="./images/page2_img1.png" alt="SFDC Account 'Cases' list">
-                            </div>
-                        </div>
-                        <div>
-                            <p><strong>5. Fill in all the mandatory information with the red asterisks and click Save.</strong></p>
-                        </div>
-                        <div>
-                            <p><strong>6. Attachment: Attach all the relevant documents under "Related" tab once you save the ticket, this will avoid delays in the resolution.</strong></p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="helper" class="sub-content ticketing-group" style="display: none;">
-                    <h3 class="font-semibold text-lg text-gray-800 mb-3">Option 2: Using the Helper App</h3>
-                    <p>Use the following steps to successfully submit a "SE Support" Ticket in the Helper App:</p>
-                    <ol class="list-decimal list-inside pl-4 space-y-2 mt-2">
-                        <li>Login to <a href="https://helper.nutanix.com/Account" target="_blank" class="text-indigo-600 hover:underline">https://helper.nutanix.com/Account</a>.</li>
-                        <li>Select your account under which you need to create a "Case".</li>
-                        <li>Click on 'Cases' > 'New'.
+<div class="container mx-auto pt-0 px-4 sm:px-6 lg:px-8">
+<div class="content mt-6" id="ticketing">
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+<h2 class="text-2xl font-bold text-purple-700 mb-4">How to Create a Case for SE Support</h2>
+<p class="mb-6">Currently, Worldwide System Engineers have 3 active options to raise a "SE Support" tickets.</p>
+<div class="sub-nav mb-6 bg-purple-100 rounded-lg p-1 flex space-x-1">
+<button class="sub-tab-button flex-1 py-2 px-4 text-center font-semibold rounded-md transition-colors duration-300 active-sub" onclick="openSubTab(event, 'sfdc', 'ticketing-group')">A) SFDC Case Object</button>
+<button class="sub-tab-button flex-1 py-2 px-4 text-center font-semibold rounded-md transition-colors duration-300" onclick="openSubTab(event, 'helper', 'ticketing-group')">B) Helper App</button>
+<button class="sub-tab-button flex-1 py-2 px-4 text-center font-semibold rounded-md transition-colors duration-300" onclick="openSubTab(event, 'gpt', 'ticketing-group')">C) SE GPT</button>
+</div>
+<div class="sub-content active-sub ticketing-group" id="sfdc">
+<h3 class="font-semibold text-lg text-gray-800 mb-3">Option 1: Using the SFDC Case Object</h3>
+<p class="mb-3">Introducing the new SE Support Ticketing system available under the customer/prospect Account object in SFDC. SFDC case creation allows SE to add all the relevant information into the ticket before submitting it to ensure quick turnaround.</p>
+<p>Use the following steps to successfully submit a "SE Support" Ticket in SFDC:</p>
+<div class="space-y-4 mt-4">
+<div>
+<p><strong>1. In Salesforce, navigate to a Customer/Prospect/Channel Account.</strong></p>
+</div>
+<div>
+<p><strong>2. Click on 'Cases'.</strong></p>
+<div class="image-container">
+<img alt="Case 'Type' drop-down menu" src="./images/page2_img3.png"/>
+</div>
+</div>
+<div>
+<p><strong>3. Click on 'New Case' to open the form, and select 'SE Support' as the record type. Click Next to proceed.</strong></p>
+<div class="image-container">
+<img alt="'New Case' record type selection" src="./images/page2_img2.png"/>
+</div>
+</div>
+<div>
+<p><strong>4. Using the Type drop-down, select the service from the drop-down list.</strong></p>
+<div class="image-container">
+<img alt="SFDC Account 'Cases' list" src="./images/page2_img1.png"/>
+</div>
+</div>
+<div>
+<p><strong>5. Fill in all the mandatory information with the red asterisks and click Save.</strong></p>
+</div>
+<div>
+<p><strong>6. Attachment: Attach all the relevant documents under "Related" tab once you save the ticket, this will avoid delays in the resolution.</strong></p>
+</div>
+</div>
+</div>
+<div class="sub-content ticketing-group" id="helper" style="display: none;">
+<h3 class="font-semibold text-lg text-gray-800 mb-3">Option 2: Using the Helper App</h3>
+<p>Use the following steps to successfully submit a "SE Support" Ticket in the Helper App:</p>
+<ol class="list-decimal list-inside pl-4 space-y-2 mt-2">
+<li>Login to <a class="text-indigo-600 hover:underline" href="https://helper.nutanix.com/Account" target="_blank">https://helper.nutanix.com/Account</a>.</li>
+<li>Select your account under which you need to create a "Case".</li>
+<li>Click on 'Cases' &gt; 'New'.
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                                <div class="image-container">
-                                    <img src="./images/page4_img2.png" alt="Helper App 'New Case' form">
-                                </div>
-                                <div class="image-container">
-                                    <img src="./images/page4_img1.png" alt="Helper App navigation">
-                                </div>
-                            </div>
-                        </li>
-                        <li>Fill the form with the mandatory information and click Save. Once its saved, a "SE Support" ticket will be automatically created under the account.
+<div class="image-container">
+<img alt="Helper App 'New Case' form" src="./images/page4_img2.png"/>
+</div>
+<div class="image-container">
+<img alt="Helper App navigation" src="./images/page4_img1.png"/>
+</div>
+</div>
+</li>
+<li>Fill the form with the mandatory information and click Save. Once its saved, a "SE Support" ticket will be automatically created under the account.
                              <div class="image-container">
-                                <img src="./images/page5_img1.png" alt="Helper App form to fill">
-                            </div>
-                        </li>
-                    </ol>
-                </div>
-
-                <div id="gpt" class="sub-content ticketing-group" style="display: none;">
-                    <h3 class="font-semibold text-lg text-gray-800 mb-3">Option 3: Using SE GPT</h3>
-                     <p>Follow the below steps to raise a SE Support ticket via SE GPT:</p>
-                    <div class="space-y-4 mt-4">
-                        <div>
-                            <p><strong>1. While querying in the SE GPT, scroll to the extreme bottom of your query response and click on "Create SE Support Case".</strong></p>
-                            <div class="image-container">
-                               <img src="./images/page6_img2.png" alt="SE GPT account lookup">
-                            </div>
-                        </div>
-                        <div>
-                             <p><strong>2. Search the account under which you need to raise a SE Support Ticket.</strong></p>
-                             <div class="image-container">
-                                <img src="./images/page6_img1.png" alt="SE GPT 'Create Case' button">
-                            </div>
-                        </div>
-                        <div>
-                             <p><strong>3. Click "Next" and fill in the form. Select the Type (Service Type), attach any relevant document before hitting the "Submit" button.</strong></p>
-                             <div class="image-container">
-                                <img src="./images/page7_img1.png" alt="SE GPT 'New Case' form">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+<img alt="Helper App form to fill" src="./images/page5_img1.png"/>
+</div>
+</li>
+</ol>
+</div>
+<div class="sub-content ticketing-group" id="gpt" style="display: none;">
+<h3 class="font-semibold text-lg text-gray-800 mb-3">Option 3: Using SE GPT</h3>
+<p>Follow the below steps to raise a SE Support ticket via SE GPT:</p>
+<div class="space-y-4 mt-4">
+<div>
+<p><strong>1. While querying in the SE GPT, scroll to the extreme bottom of your query response and click on "Create SE Support Case".</strong></p>
+<div class="image-container">
+<img alt="SE GPT account lookup" src="./images/page6_img2.png"/>
+</div>
+</div>
+<div>
+<p><strong>2. Search the account under which you need to raise a SE Support Ticket.</strong></p>
+<div class="image-container">
+<img alt="SE GPT 'Create Case' button" src="./images/page6_img1.png"/>
+</div>
+</div>
+<div>
+<p><strong>3. Click "Next" and fill in the form. Select the Type (Service Type), attach any relevant document before hitting the "Submit" button.</strong></p>
+<div class="image-container">
+<img alt="SE GPT 'New Case' form" src="./images/page7_img1.png"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <script>
 function openSubTab(evt, tabName, groupClass) {
     let i, subContent, subTabButtons;
@@ -169,6 +187,73 @@ function openSubTab(evt, tabName, groupClass) {
     evt.currentTarget.classList.add("active-sub");
 }
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".image-container img").forEach(img => {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", function() {
+      // Create overlay
+      const overlay = document.createElement("div");
+      overlay.classList.add("image-overlay");
 
-</body>
+      const zoomImg = document.createElement("img");
+      zoomImg.src = this.src;
+
+      overlay.appendChild(zoomImg);
+      document.body.appendChild(overlay);
+
+      let scale = 1;
+      let isDragging = false;
+      let startX, startY, translateX = 0, translateY = 0;
+
+      overlay.addEventListener("wheel", function(e) {
+        e.preventDefault();
+        if (e.deltaY < 0) {
+          scale *= 1.1; // zoom in
+        } else {
+          scale /= 1.1; // zoom out
+        }
+        zoomImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+      });
+
+      // Drag to move image
+      zoomImg.addEventListener("mousedown", function(e) {
+        isDragging = true;
+        startX = e.clientX - translateX;
+        startY = e.clientY - translateY;
+        zoomImg.style.cursor = "grabbing";
+      });
+
+      document.addEventListener("mousemove", function(e) {
+        if (!isDragging) return;
+        translateX = e.clientX - startX;
+        translateY = e.clientY - startY;
+        zoomImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+      });
+
+      document.addEventListener("mouseup", function() {
+        if (isDragging) {
+          isDragging = false;
+          zoomImg.style.cursor = "grab";
+        }
+      });
+
+      // close on click outside image
+      overlay.addEventListener("click", function(e) {
+        if (e.target === overlay) {
+          overlay.remove();
+        }
+      });
+
+      // close on escape
+      document.addEventListener("keydown", function escHandler(e) {
+        if (e.key === "Escape") {
+          overlay.remove();
+          document.removeEventListener("keydown", escHandler);
+        }
+      });
+    });
+  });
+});
+</script></body>
 </html>
