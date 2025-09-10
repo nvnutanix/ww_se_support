@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worldwide SE Support Services Guide</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Worldwide SE Support Services Guide</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
         /* Custom Styles for a more polished look */
         body {
             font-family: 'Inter', sans-serif;
@@ -50,83 +51,142 @@
             border-radius: 6px; /* Slightly rounded corners for images */
             box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
         }
-    </style>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.image-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  transition: transform 0.2s ease;
+}
+</style>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 </head>
 <body class="bg-gray-50 text-gray-800">
-    <div class="container mx-auto pt-0 px-4 sm:px-6 lg:px-8">
-        <div id="management" class="content mt-6">
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                <h2 class="text-2xl font-bold text-purple-700 mb-4">Ticket Priority Levels & SLAs</h2>
-                <p class="mb-4">Below is the definition for each priority level to be considered while raising the SE Support tickets.</p>
-                
-                <div class="space-y-4">
-                    <div class="border-l-4 border-red-500 bg-red-50 p-4 rounded-r-lg">
-                        <h3 class="font-bold text-red-800">P1 - Emergency</h3>
-                        <ul class="list-disc list-inside text-red-700 text-sm mt-1 pl-4">
-                            <li>Any task completion or service required to remove any deal blockers associated with opportunities closing on the same day.</li>
-                            <li>Up to 30 minutes to be contacted.</li>
-                        </ul>
-                    </div>
-                    <div class="border-l-4 border-orange-500 bg-orange-50 p-4 rounded-r-lg">
-                        <h3 class="font-bold text-orange-800">P2 - Critical</h3>
-                        <ul class="list-disc list-inside text-orange-700 text-sm mt-1 pl-4">
-                             <li>The SE requires quicker attention and response.</li>
-                             <li>The SE needs the deliverable for the next hours or within the same day.</li>
-                             <li>Expected response in 1 hour from SE Support.</li>
-                        </ul>
-                    </div>
-                    <div class="border-l-4 border-blue-500 bg-blue-50 p-4 rounded-r-lg">
-                        <h3 class="font-bold text-blue-800">P3 - Normal</h3>
-                         <ul class="list-disc list-inside text-blue-700 text-sm mt-1 pl-4">
-                            <li>The SE have a standard request.</li>
-                            <li>The SE needs the deliverable within the next 24 hours.</li>
-                            <li>Expected response in 3 hour from SE Support.</li>
-                         </ul>
-                    </div>
-                    <div class="border-l-4 border-green-500 bg-green-50 p-4 rounded-r-lg">
-                        <h3 class="font-bold text-green-800">P4 - Low</h3>
-                        <ul class="list-disc list-inside text-green-700 text-sm mt-1 pl-4">
-                            <li>The SE have a request considered as low priority.</li>
-                            <li>The SE needs the deliverable within the next 24-48 hours.</li>
-                            <li>Expected response in 4 hour from SE Support.</li>
-                        </ul>
-                    </div>
-                    <div class="border-l-4 border-purple-500 bg-purple-50 p-4 rounded-r-lg">
-                        <h3 class="font-bold text-purple-800">Escalation</h3>
-                        <ul class="list-disc list-inside text-purple-700 text-sm mt-1 pl-4">
-                           <li>The SE has not received a first contact response or updates during the first 12 hours.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mt-6">
-                <h2 class="text-2xl font-bold text-purple-700 mb-4">Ticket Information & Processing</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="font-semibold text-lg text-gray-800 mb-3">Mandatory Information on the ticket</h3>
-                         <ul class="list-disc list-inside space-y-2">
-                            <li><strong>A. System Engineer Name</strong> - Enter the name of the SE who is creating the ticket.</li>
-                            <li><strong>B. Ticket Type</strong></li>
-                            <li><strong>C. Priority</strong> - Set the correct priority (refer the priority definitions shared above).</li>
-                            <li><strong>D. Account Name</strong> - Currently a manual field, enhancements to auto-populate Account Name coming soon.</li>
-                            <li><strong>E. Opportunity</strong> - not mandatory (if available).</li>
-                            <li><strong>F. Subject</strong></li>
-                            <li><strong>G. Status</strong> - will default to New.</li>
-                            <li><strong>H. Description</strong> - Provide complete information to help the SE Support Team resolve the ticket quickly.</li>
-                            <li><strong>I. Attachment</strong> - Attach all the relevant documents under "Related" tab once you save the ticket.</li>
-                        </ul>
-                    </div>
-                    <div>
-                         <h3 class="font-semibold text-lg text-gray-800 mb-3">Processing Submitted Tickets</h3>
-                         <p>Once a ticket has been submitted, the System Engineers can use the Feed tab on the case object in SFDC to communicate and provide further details and updates on the case. The SE Support Team will utilize the Send email feature on the case object to work with various stake holders for a communication and resolution.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="container mx-auto pt-0 px-4 sm:px-6 lg:px-8">
+<div class="content mt-6" id="management">
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+<h2 class="text-2xl font-bold text-purple-700 mb-4">Ticket Priority Levels &amp; SLAs</h2>
+<p class="mb-4">Below is the definition for each priority level to be considered while raising the SE Support tickets.</p>
+<div class="space-y-4">
+<div class="border-l-4 border-red-500 bg-red-50 p-4 rounded-r-lg">
+<h3 class="font-bold text-red-800">P1 - Emergency</h3>
+<ul class="list-disc list-inside text-red-700 text-sm mt-1 pl-4">
+<li>Any task completion or service required to remove any deal blockers associated with opportunities closing on the same day.</li>
+<li>Up to 30 minutes to be contacted.</li>
+</ul>
+</div>
+<div class="border-l-4 border-orange-500 bg-orange-50 p-4 rounded-r-lg">
+<h3 class="font-bold text-orange-800">P2 - Critical</h3>
+<ul class="list-disc list-inside text-orange-700 text-sm mt-1 pl-4">
+<li>The SE requires quicker attention and response.</li>
+<li>The SE needs the deliverable for the next hours or within the same day.</li>
+<li>Expected response in 1 hour from SE Support.</li>
+</ul>
+</div>
+<div class="border-l-4 border-blue-500 bg-blue-50 p-4 rounded-r-lg">
+<h3 class="font-bold text-blue-800">P3 - Normal</h3>
+<ul class="list-disc list-inside text-blue-700 text-sm mt-1 pl-4">
+<li>The SE have a standard request.</li>
+<li>The SE needs the deliverable within the next 24 hours.</li>
+<li>Expected response in 3 hour from SE Support.</li>
+</ul>
+</div>
+<div class="border-l-4 border-green-500 bg-green-50 p-4 rounded-r-lg">
+<h3 class="font-bold text-green-800">P4 - Low</h3>
+<ul class="list-disc list-inside text-green-700 text-sm mt-1 pl-4">
+<li>The SE have a request considered as low priority.</li>
+<li>The SE needs the deliverable within the next 24-48 hours.</li>
+<li>Expected response in 4 hour from SE Support.</li>
+</ul>
+</div>
+<div class="border-l-4 border-purple-500 bg-purple-50 p-4 rounded-r-lg">
+<h3 class="font-bold text-purple-800">Escalation</h3>
+<ul class="list-disc list-inside text-purple-700 text-sm mt-1 pl-4">
+<li>The SE has not received a first contact response or updates during the first 12 hours.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mt-6">
+<h2 class="text-2xl font-bold text-purple-700 mb-4">Ticket Information &amp; Processing</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h3 class="font-semibold text-lg text-gray-800 mb-3">Mandatory Information on the ticket</h3>
+<ul class="list-disc list-inside space-y-2">
+<li><strong>A. System Engineer Name</strong> - Enter the name of the SE who is creating the ticket.</li>
+<li><strong>B. Ticket Type</strong></li>
+<li><strong>C. Priority</strong> - Set the correct priority (refer the priority definitions shared above).</li>
+<li><strong>D. Account Name</strong> - Currently a manual field, enhancements to auto-populate Account Name coming soon.</li>
+<li><strong>E. Opportunity</strong> - not mandatory (if available).</li>
+<li><strong>F. Subject</strong></li>
+<li><strong>G. Status</strong> - will default to New.</li>
+<li><strong>H. Description</strong> - Provide complete information to help the SE Support Team resolve the ticket quickly.</li>
+<li><strong>I. Attachment</strong> - Attach all the relevant documents under "Related" tab once you save the ticket.</li>
+</ul>
+</div>
+<div>
+<h3 class="font-semibold text-lg text-gray-800 mb-3">Processing Submitted Tickets</h3>
+<p>Once a ticket has been submitted, the System Engineers can use the Feed tab on the case object in SFDC to communicate and provide further details and updates on the case. The SE Support Team will utilize the Send email feature on the case object to work with various stake holders for a communication and resolution.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".image-container img").forEach(img => {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", function() {
+      // Create overlay
+      const overlay = document.createElement("div");
+      overlay.classList.add("image-overlay");
 
-</body>
+      const zoomImg = document.createElement("img");
+      zoomImg.src = this.src;
+
+      overlay.appendChild(zoomImg);
+      document.body.appendChild(overlay);
+
+      let scale = 1;
+      overlay.addEventListener("wheel", function(e) {
+        e.preventDefault();
+        if (e.deltaY < 0) {
+          scale *= 1.1; // zoom in
+        } else {
+          scale /= 1.1; // zoom out
+        }
+        zoomImg.style.transform = `scale(${scale})`;
+      });
+
+      // close on click
+      overlay.addEventListener("click", function() {
+        overlay.remove();
+      });
+
+      // close on escape
+      document.addEventListener("keydown", function escHandler(e) {
+        if (e.key === "Escape") {
+          overlay.remove();
+          document.removeEventListener("keydown", escHandler);
+        }
+      });
+    });
+  });
+});
+</script></body>
 </html>
