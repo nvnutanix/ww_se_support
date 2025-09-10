@@ -67,13 +67,14 @@
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  cursor: zoom-out;
+  cursor: grab;
 }
 
 .image-overlay img {
   max-width: 90%;
   max-height: 90%;
   transition: transform 0.2s ease;
+  cursor: grab;
 }
 </style>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -387,7 +388,6 @@ document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll(".image-container img").forEach(img => {
     img.style.cursor = "zoom-in";
     img.addEventListener("click", function() {
-      // Create overlay
       const overlay = document.createElement("div");
       overlay.classList.add("image-overlay");
 
@@ -398,22 +398,56 @@ document.addEventListener("DOMContentLoaded", function() {
       document.body.appendChild(overlay);
 
       let scale = 1;
+      let isDragging = false;
+      let startX, startY, translateX = 0, translateY = 0;
+
       overlay.addEventListener("wheel", function(e) {
         e.preventDefault();
+        const rect = zoomImg.getBoundingClientRect();
+        const offsetX = e.clientX - rect.left;
+        const offsetY = e.clientY - rect.top;
+
+        const prevScale = scale;
         if (e.deltaY < 0) {
-          scale *= 1.1; // zoom in
+          scale *= 1.1;
         } else {
-          scale /= 1.1; // zoom out
+          scale /= 1.1;
         }
-        zoomImg.style.transform = `scale(${scale})`;
+        const scaleFactor = scale / prevScale;
+
+        translateX -= (offsetX - translateX) * (scaleFactor - 1);
+        translateY -= (offsetY - translateY) * (scaleFactor - 1);
+
+        zoomImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
       });
 
-      // close on click
-      overlay.addEventListener("click", function() {
-        overlay.remove();
+      zoomImg.addEventListener("mousedown", function(e) {
+        isDragging = true;
+        startX = e.clientX - translateX;
+        startY = e.clientY - translateY;
+        zoomImg.style.cursor = "grabbing";
       });
 
-      // close on escape
+      document.addEventListener("mousemove", function(e) {
+        if (!isDragging) return;
+        translateX = e.clientX - startX;
+        translateY = e.clientY - startY;
+        zoomImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+      });
+
+      document.addEventListener("mouseup", function() {
+        if (isDragging) {
+          isDragging = false;
+          zoomImg.style.cursor = "grab";
+        }
+      });
+
+      overlay.addEventListener("click", function(e) {
+        if (e.target === overlay) {
+          overlay.remove();
+        }
+      });
+
       document.addEventListener("keydown", function escHandler(e) {
         if (e.key === "Escape") {
           overlay.remove();

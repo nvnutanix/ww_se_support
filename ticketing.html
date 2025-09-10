@@ -192,7 +192,6 @@ document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll(".image-container img").forEach(img => {
     img.style.cursor = "zoom-in";
     img.addEventListener("click", function() {
-      // Create overlay
       const overlay = document.createElement("div");
       overlay.classList.add("image-overlay");
 
@@ -208,15 +207,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
       overlay.addEventListener("wheel", function(e) {
         e.preventDefault();
+        const rect = zoomImg.getBoundingClientRect();
+        const offsetX = e.clientX - rect.left;
+        const offsetY = e.clientY - rect.top;
+
+        const prevScale = scale;
         if (e.deltaY < 0) {
-          scale *= 1.1; // zoom in
+          scale *= 1.1;
         } else {
-          scale /= 1.1; // zoom out
+          scale /= 1.1;
         }
+        const scaleFactor = scale / prevScale;
+
+        translateX -= (offsetX - translateX) * (scaleFactor - 1);
+        translateY -= (offsetY - translateY) * (scaleFactor - 1);
+
         zoomImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
       });
 
-      // Drag to move image
       zoomImg.addEventListener("mousedown", function(e) {
         isDragging = true;
         startX = e.clientX - translateX;
@@ -238,14 +246,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       });
 
-      // close on click outside image
       overlay.addEventListener("click", function(e) {
         if (e.target === overlay) {
           overlay.remove();
         }
       });
 
-      // close on escape
       document.addEventListener("keydown", function escHandler(e) {
         if (e.key === "Escape") {
           overlay.remove();
