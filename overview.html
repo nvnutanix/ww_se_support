@@ -49,47 +49,13 @@
             border-radius: 6px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-
-        /* --- FULL JUSTIFY FOR ALL CONTENT BOXES (PARAGRAPHS + LIST ITEMS) --- */
-
-        /* Paragraphs in content boxes */
-        .content p {
-            text-align: justify;
-            text-justify: inter-word;
-            hyphens: auto;
-        }
-
-        /* Make lists use a custom bullet so the text can occupy full width */
-        .content ul,
-        .content ol {
-            list-style: none;    /* ukloni default marker */
-            padding-left: 0;     /* ukloni default indent */
-            margin-left: 0;
-        }
-
-        /* List items: daju padding za custom marker i justify teksta */
+        /* Justify text inside all content boxes */
+        .content p,
         .content li {
-            position: relative;
-            padding-left: 1.35rem; /* prostor za "bullet" */
-            margin-bottom: 0.6rem;
             text-align: justify;
             text-justify: inter-word;
             hyphens: auto;
         }
-
-        /* Custom bullet (vizuelno kao list-disc) */
-        .content li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            top: 0.15rem;
-            font-size: 0.9rem;
-            color: #111827;
-            line-height: 1;
-        }
-
-        /* (opciono) zadrži razmak između list itema u slučaju dugih stavki */
-        .content ul.list-disc { padding-left: 1rem; }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,8 +80,7 @@
                     </ul>
                 </div>
             </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mt-6">
+             <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mt-6">
                 <h2 class="text-2xl font-bold text-purple-700 mb-4">SE Support Services List</h2>
                 <ul class="list-disc list-inside space-y-3">
                     <li><strong>HW BOM Validation:</strong> Perform customer/prospects existing hardware compatibility check on AHV, also recommends component replacement of the existing HW to meet the AHV compatibility.</li>
